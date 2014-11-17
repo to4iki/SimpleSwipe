@@ -1,25 +1,66 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gci-SP-DLU">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Navigation Controller-->
+        <scene sceneID="VNr-Vv-Ipt">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <navigationController id="gci-SP-DLU" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="600"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mYS-3R-bLx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="s6v-zF-osM" kind="relationship" relationship="rootViewController" id="0Fb-e4-ZGf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QK9-Fz-qAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="199" y="24"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iIb-ta-llb">
+            <objects>
+                <viewController id="s6v-zF-osM" customClass="ViewController" customModule="SimpleSwipe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PkZ-PJ-dvZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="vYp-kT-SgD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2at-xk-g8z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rx-bB-cAW">
+                                <rect key="frame" x="-5" y="64" width="330" height="536"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vYp-kT-SgD" firstAttribute="top" secondItem="9rx-bB-cAW" secondAttribute="bottom" id="4d5-KA-xNX"/>
+                            <constraint firstItem="9rx-bB-cAW" firstAttribute="top" secondItem="PkZ-PJ-dvZ" secondAttribute="bottom" id="MEj-3b-jfE"/>
+                            <constraint firstAttribute="trailing" secondItem="9rx-bB-cAW" secondAttribute="trailing" constant="-5" id="OMI-yB-rvm"/>
+                            <constraint firstItem="9rx-bB-cAW" firstAttribute="leading" secondItem="2at-xk-g8z" secondAttribute="leading" constant="-5" id="Vfg-bH-cu6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="s3h-Wd-1aa">
+                        <nil key="title"/>
+                        <pageControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="jxk-bb-hTb">
+                            <rect key="frame" x="8" y="4" width="304" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </pageControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pageControl" destination="jxk-bb-hTb" id="TlK-ga-Eo3"/>
+                        <outlet property="scrollView" destination="9rx-bB-cAW" id="dA7-VM-pUI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uQz-Co-KmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="574" y="24"/>
         </scene>
     </scenes>
 </document>
